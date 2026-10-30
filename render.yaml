@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: my-xtb-ultra
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL      # chaine de connexion Supabase (Session pooler)
+        sync: false
+      - key: FMP_API_KEY
+        sync: false
+      - key: ALPHAVANTAGE_API_KEY
+        sync: false
+      - key: ACCESS_CODE       # le code que tu saisiras a l'ouverture de l'app
+        sync: false
